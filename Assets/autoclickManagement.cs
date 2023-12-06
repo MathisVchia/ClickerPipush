@@ -5,9 +5,8 @@ using TMPro;
 
 public class autoclickManagement : MonoBehaviour
 {
-    public int bonus;
     private float _timeAutoClick = 1f;
-    public TextMeshProUGUI bonusUI;
+    public scoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +30,8 @@ public class autoclickManagement : MonoBehaviour
 
     void autoclick()
     {
-        bonus++;
-        bonusUI.text = "Bonus : " + bonus;
+
+        scoreManager.addScore();
     }
 }
 

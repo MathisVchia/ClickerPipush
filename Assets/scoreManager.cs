@@ -22,7 +22,13 @@ public class scoreManager : MonoBehaviour
 
     public void OnMouseDown()
     {
+        addScore();
+    }
+
+    public void addScore()
+    {
         score++;
         scoreUI.text = "Score : " + score;
     }
+
 }
