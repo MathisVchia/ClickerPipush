@@ -1,16 +1,17 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class shopManager : MonoBehaviour
+public class shopManagement : MonoBehaviour
 {
-    public autoclickManagement report;
+    public scoreManager scoreManager;
+    public TextMeshProUGUI bonusUI;
+    public int bonus;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -18,12 +19,22 @@ public class shopManager : MonoBehaviour
     {
     }
 
+    public void OnMouseDown()
+    {
+        upgradeClick();
+    }
+
     public void upgradeClick()
     {
-        if (report.bonus >= 10)
+        if (scoreManager.score >= 10)
         {
-            report.bonus -= 10;
-            report.bonusUI.text = "Bonus : " + report.bonus;
+            scoreManager.score --;
+            bonus++;
+            bonusUI.text = "Bonus : " + bonus;
+        }
+        else
+        {
+
         }
     }
-}*/
+}
