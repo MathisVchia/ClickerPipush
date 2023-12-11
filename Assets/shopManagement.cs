@@ -29,6 +29,7 @@ public class shopManagement : MonoBehaviour
         if (scoreManager.score >= 10)
         {
             scoreManager.score --;
+            scoreManager.scoreUI.text = "Score : " + scoreManager.score;
             bonus++;
             bonusUI.text = "Bonus : " + bonus;
         }
