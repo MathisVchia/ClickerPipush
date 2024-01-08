@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeManager : MonoBehaviour
+public class UpgradeTicketsManager : MonoBehaviour
 {
     public shopManagement shopManagement;
-    public GameObject upgradeButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
-    public bool upgradeButtons = false;
+    public GameObject upgradeTicketsButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
+    public bool upgradeTicketsButtons = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +18,15 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shopManagement.bonus > 10)
+        if (shopManagement.bonus > 25)
         {
-            upgradeButtons = true;
+            upgradeTicketsButtons = true;
             Debug.Log("Upgrade buttons are now available!");
             SetUpgradeButtonVisibility(true); // Rendre le bouton visible
         }
         else
         {
-            upgradeButtons = false;
+            upgradeTicketsButtons = false;
             SetUpgradeButtonVisibility(false); // Rendre le bouton invisible
         }
     }
@@ -34,12 +34,13 @@ public class UpgradeManager : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetUpgradeButtonVisibility(bool isVisible)
     {
-        if (upgradeButton != null)
+        if (upgradeTicketsButton != null)
         {
-            upgradeButton.SetActive(isVisible);
+            upgradeTicketsButton.SetActive(isVisible);
         }
         else
         {
+            Debug.LogWarning("Veuillez faire glisser le bouton UI dans la variable Upgrade Button dans l'inspecteur Unity.");
         }
     }
 }
