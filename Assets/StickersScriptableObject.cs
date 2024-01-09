@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "StickersManager", menuName = "Stickers", order = 0)]
 
-public class StickersScriptableObject : ScriptableObject
+public class ScriptableObjectStickers : ScriptableObject
 {
     // Définir les différentes caractéristiques des ennemis
     public Sprite Appareance;

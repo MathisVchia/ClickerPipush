@@ -6,18 +6,29 @@ public class gatchaManagement : MonoBehaviour
 {
 
     public StickersScriptableObject[] allStickersDatas;
-    public StickersScriptableObject stickersData;
+    public SpriteRenderer SpriteRenderer;
+    private StickersScriptableObject CurrentStickers;
+
+    public bool stickersActiv;
 
     // Start is called before the first frame update
     void Start()
     {
-        stickersData = allStickersDatas[Random.Range(0, allStickersDatas.Lenght)];
-        gameObject.GetComponent<Image>().sprite = stickersData.spriteStickers;
+        stickersActiv = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void StickersSpawn()
+    {
+        CurrentStickers = StickersList[Random.Range(0, StickersList.Lenght)];
+
+        StickersRenderer.sprite = CurrentStickers.Appareance;
+        StickersRenderer.enabled = true;
+        stickersActiv = true;
     }
 }
