@@ -5,6 +5,7 @@ using UnityEngine;
 public class UpgradeTicketsManager : MonoBehaviour
 {
     public shopManagement shopManagement;
+    public scoreManager scoreManager;
     public GameObject upgradeTicketsButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
     public bool upgradeTicketsButtons = false;
 
@@ -42,5 +43,11 @@ public class UpgradeTicketsManager : MonoBehaviour
         {
             Debug.LogWarning("Veuillez faire glisser le bouton UI dans la variable Upgrade Button dans l'inspecteur Unity.");
         }
+    }
+
+    void upgradeTickets()
+    {
+        shopManagement.bonus = shopManagement.bonus += 5;
+        scoreManager.score = scoreManager.score -= 5;
     }
 }

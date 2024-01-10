@@ -5,30 +5,56 @@ using UnityEngine;
 public class gatchaManagement : MonoBehaviour
 {
 
-    public StickersScriptableObject[] allStickersDatas;
-    public SpriteRenderer SpriteRenderer;
-    private StickersScriptableObject CurrentStickers;
-
-    public bool stickersActiv;
+    public shopManagement shopManagement;
+    public GameObject gatchaButton;
+    public GameObject stickers1;
+    public bool gatchaButtons = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        stickersActiv = false;
+        SetGatchaButtonVisibility(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (shopManagement.bonus > 30)
+        {
+            gatchaButtons = true;
+            Debug.Log("Upgrade buttons are now available!");
+            SetGatchaButtonVisibility(true); // Rendre le bouton visible
+        }
+        else
+        {
+            gatchaButtons = false;
+            SetGatchaButtonVisibility(false); // Rendre le bouton invisible
+        }
+
     }
 
-    public void StickersSpawn()
+    public void OnMouseDown()
     {
-        CurrentStickers = StickersList[Random.Range(0, StickersList.Lenght)];
-
-        StickersRenderer.sprite = CurrentStickers.Appareance;
-        StickersRenderer.enabled = true;
-        stickersActiv = true;
+        gatchaClick();
     }
+
+    public void gatchaClick()
+    {
+        Instantiate(stickers1, new Vector3(0, 0, 0), Quaternion.identity);
+        shopManagement.bonus = shopManagement.bonus - 30;
+    }
+
+    // Méthode pour définir la visibilité du bouton
+    void SetGatchaButtonVisibility(bool isVisible)
+    {
+        if (gatchaButton != null)
+        {
+            gatchaButton.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
 }

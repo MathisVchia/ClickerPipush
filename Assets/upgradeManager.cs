@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeManager : MonoBehaviour
+public class upgradeManager : MonoBehaviour
 {
     public shopManagement shopManagement;
+    public autoclickManagement autoclickManagement;
+    public scoreManager scoreManager;
     public GameObject upgradeButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
     public bool upgradeButtons = false;
+    public bool upgradeAutoClick = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +44,11 @@ public class UpgradeManager : MonoBehaviour
         else
         {
         }
+    }
+
+    public void onClick()
+    {
+        upgradeAutoClick = true;
+        Debug.Log("Upgrade Activated");
     }
 }
