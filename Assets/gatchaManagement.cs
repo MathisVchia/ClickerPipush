@@ -8,12 +8,15 @@ public class gatchaManagement : MonoBehaviour
     public shopManagement shopManagement;
     public GameObject gatchaButton;
     public GameObject stickersCommon1;
+    public GameObject passButton;
     public bool gatchaButtons = false;
+    public bool showStickers = false;
 
     // Gestion des taux d'obtentions
     public int RandomLoot;
     public int Minimum = 0;
     public int Maximum = 100;
+    public int Price = 30;
 
     public int MaxRandomNormal;
     public int MaxRandomGold;
@@ -23,6 +26,7 @@ public class gatchaManagement : MonoBehaviour
     {
         SetGatchaButtonVisibility(false);
         SetStickerCommon1Visibility(false);
+        SetValidationButtonVisibility(false);
     }
 
     // Update is called once per frame
@@ -56,13 +60,33 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un coeur normal
         if (RandomLoot <= MaxRandomNormal)
         {
-            //stickerCommon1 = true;
-            Debug.Log("Upgrade buttons are now available!");
-            SetStickerCommon1Visibility(true); // Rendre le stickers visible
-            shopManagement.bonus--;
-            shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
+            showStickers = true;
+
+            {
+                //stickerCommon1 = true;
+                Debug.Log("Upgrade buttons are now available!");
+                SetStickerCommon1Visibility(true); // Rendre le stickers visible
+                shopManagement.bonus = (shopManagement.bonus - Price);
+                shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
+                showStickers = false;
+
+                SetValidationButtonVisibility(true);
+            }
         }
 
+    }
+
+    public void passVisual()
+    {
+        if (showStickers == false)
+        {
+            SetStickerCommon1Visibility(false);
+            SetValidationButtonVisibility(false);
+        }
+        else
+        {
+
+        }
     }
 
     // Méthode pour définir la visibilité du bouton
@@ -83,6 +107,18 @@ public class gatchaManagement : MonoBehaviour
         if (stickersCommon1 != null)
         {
             stickersCommon1.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
+    // Méthode pour définir la visibilité du bouton
+    void SetValidationButtonVisibility(bool isVisible)
+    {
+        if (passButton != null)
+        {
+           passButton.SetActive(isVisible);
         }
         else
         {
