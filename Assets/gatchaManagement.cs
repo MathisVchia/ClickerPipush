@@ -21,6 +21,8 @@ public class gatchaManagement : MonoBehaviour
     public int MaxRandomNormal;
     public int MaxRandomGold;
 
+    public GameObject RedParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,7 @@ public class gatchaManagement : MonoBehaviour
                 //stickerCommon1 = true;
                 Debug.Log("Upgrade buttons are now available!");
                 SetStickerCommon1Visibility(true); // Rendre le stickers visible
+                Instantiate(RedParticle, new Vector3(2.0f, 0, 0), Quaternion.identity);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
                 showStickers = false;
@@ -81,6 +84,7 @@ public class gatchaManagement : MonoBehaviour
         if (showStickers == false)
         {
             SetStickerCommon1Visibility(false);
+            Destroy(RedParticle);
             SetValidationButtonVisibility(false);
         }
         else

@@ -9,6 +9,8 @@ public class UpgradeTicketsManager : MonoBehaviour
     public GameObject upgradeTicketsButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
     public bool upgradeTicketsButtons = false;
 
+    public int upgrade = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +47,11 @@ public class UpgradeTicketsManager : MonoBehaviour
         }
     }
 
-    void upgradeTickets()
+    public void upgradeTickets()
     {
-        shopManagement.bonus = shopManagement.bonus += 5;
-        scoreManager.score = scoreManager.score -= 5;
+        shopManagement.bonus = (shopManagement.bonus + upgrade);
+        shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
+        scoreManager.score = (scoreManager.score - upgrade);
+        scoreManager.scoreUI.text = "Score : " + scoreManager.score;
     }
 }
