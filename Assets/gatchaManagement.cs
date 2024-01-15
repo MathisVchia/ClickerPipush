@@ -62,16 +62,17 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un coeur normal
         if (RandomLoot <= MaxRandomNormal)
         {
-            showStickers = true;
+            //showStickers = true;
 
             {
                 //stickerCommon1 = true;
                 Debug.Log("Upgrade buttons are now available!");
                 SetStickerCommon1Visibility(true); // Rendre le stickers visible
-                Instantiate(RedParticle, new Vector3(2.0f, 0, 0), Quaternion.identity);
+                var vfx = Instantiate(RedParticle,Camera.main.transform);
+                vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
-                showStickers = false;
+                //showStickers = false;
 
                 SetValidationButtonVisibility(true);
             }
@@ -81,16 +82,15 @@ public class gatchaManagement : MonoBehaviour
 
     public void passVisual()
     {
-        if (showStickers == false)
-        {
+        //if (showStickers == false)
+        //{
             SetStickerCommon1Visibility(false);
-            Destroy(RedParticle);
             SetValidationButtonVisibility(false);
-        }
-        else
-        {
+        //}
+        //else
+        //{
 
-        }
+        //}
     }
 
     // Méthode pour définir la visibilité du bouton
