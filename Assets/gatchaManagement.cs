@@ -9,6 +9,8 @@ public class gatchaManagement : MonoBehaviour
     public GameObject gatchaButton;
     public GameObject stickersCommon1;
     public GameObject passButton;
+    public GameObject carnet;
+    public GameObject closeCarnetButton;
     public bool gatchaButtons = false;
     public bool showStickers = false;
 
@@ -17,6 +19,7 @@ public class gatchaManagement : MonoBehaviour
     public int Minimum = 0;
     public int Maximum = 100;
     public int Price = 30;
+    public int nbStickersCommon;
 
     public int MaxRandomNormal;
     public int MaxRandomGold;
@@ -29,6 +32,8 @@ public class gatchaManagement : MonoBehaviour
         SetGatchaButtonVisibility(false);
         SetStickerCommon1Visibility(false);
         SetValidationButtonVisibility(false);
+        SetCarnetVisibility(false);
+        SetButtonCloseCarnetVisibility(false);
     }
 
     // Update is called once per frame
@@ -72,6 +77,7 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
+                nbStickersCommon = nbStickersCommon++;
                 //showStickers = false;
 
                 SetValidationButtonVisibility(true);
@@ -93,6 +99,18 @@ public class gatchaManagement : MonoBehaviour
         //}
     }
 
+    public void showCarnet()
+    {
+        SetCarnetVisibility(true);
+        SetButtonCloseCarnetVisibility(true);
+    }
+
+
+    public void closeCarnet()
+    {
+        SetCarnetVisibility(false);
+        SetButtonCloseCarnetVisibility(false);
+    }
     // Méthode pour définir la visibilité du bouton
     void SetGatchaButtonVisibility(bool isVisible)
     {
@@ -123,6 +141,28 @@ public class gatchaManagement : MonoBehaviour
         if (passButton != null)
         {
            passButton.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
+    void SetCarnetVisibility(bool isVisible)
+    {
+        if (carnet != null)
+        {
+            carnet.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
+    void SetButtonCloseCarnetVisibility(bool isVisible)
+    {
+        if(closeCarnetButton != null)
+        {
+            closeCarnetButton.SetActive(isVisible);
         }
         else
         {
