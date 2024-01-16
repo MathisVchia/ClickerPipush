@@ -31,7 +31,7 @@ public class shopManagement : MonoBehaviour
             scoreManager.score --;
             scoreManager.scoreUI.text = "Score : " + scoreManager.score;
             bonus++;
-            bonusUI.text = "Ticket : " + bonus;
+            bonusUI.text = "" + bonus;
         }
         else
         {
