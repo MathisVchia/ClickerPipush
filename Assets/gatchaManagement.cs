@@ -19,7 +19,7 @@ public class gatchaManagement : MonoBehaviour
     public int Minimum = 0;
     public int Maximum = 100;
     public int Price = 30;
-    public int nbStickersCommon;
+    public int nbStickersCommon = 0;
 
     public int MaxRandomNormal;
     public int MaxRandomGold;
@@ -77,10 +77,10 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
-                nbStickersCommon = nbStickersCommon++;
+                nbStickersCommon++;
                 //showStickers = false;
-
                 SetValidationButtonVisibility(true);
+
             }
         }
 
@@ -103,6 +103,24 @@ public class gatchaManagement : MonoBehaviour
     {
         SetCarnetVisibility(true);
         SetButtonCloseCarnetVisibility(true);
+        if (nbStickersCommon >= 1)
+        {
+            SetStickerCommon1Visibility(true);
+
+            // Position aléatoire
+            float randomX = Random.Range(10f, 500f); // Modifiez les valeurs selon vos besoins
+            float randomY = Random.Range(0f, 750f);    // Modifiez les valeurs selon vos besoins
+            Vector3 randomPosition = new Vector3(randomX, randomY, 0);
+            stickersCommon1.transform.position = randomPosition;
+
+            // Rotation aléatoire
+            float randomRotationX = Random.Range(0f, 360f); // Modifiez les valeurs selon vos besoins
+            //float randomRotationY = Random.Range(0f, 360f); // Modifiez les valeurs selon vos besoins
+            Quaternion randomRotation = Quaternion.Euler(randomRotationX, 0, 0);
+            stickersCommon1.transform.rotation = randomRotation;
+
+            Debug.Log("Already have stickers");
+        }
     }
 
 
@@ -110,7 +128,9 @@ public class gatchaManagement : MonoBehaviour
     {
         SetCarnetVisibility(false);
         SetButtonCloseCarnetVisibility(false);
+        SetStickerCommon1Visibility(false);
     }
+
     // Méthode pour définir la visibilité du bouton
     void SetGatchaButtonVisibility(bool isVisible)
     {
