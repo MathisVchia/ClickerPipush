@@ -1550,7 +1550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 174, y: 255}
+  m_AnchoredPosition: {x: 159, y: 305}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734108483
@@ -1910,6 +1910,8 @@ MonoBehaviour:
   gatchaButton: {fileID: 1702516837}
   stickersCommon1: {fileID: 155194840}
   stickersCommon2: {fileID: 604978773}
+  stickersCommon1Carnet: {fileID: 155194840}
+  stickersCommon2Carnet: {fileID: 604978773}
   passButton: {fileID: 1703127164}
   carnet: {fileID: 1206537534}
   closeCarnetButton: {fileID: 734108481}
@@ -2070,7 +2072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: 342.5}
+  m_AnchoredPosition: {x: -290, y: 383.5}
   m_SizeDelta: {x: 124.6376, y: 31.1594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &963194225
@@ -3105,7 +3107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: -47}
+  m_AnchoredPosition: {x: -6, y: -6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1242774675
@@ -8212,7 +8214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -429, y: 344.5}
+  m_AnchoredPosition: {x: -427, y: 372}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464933794
