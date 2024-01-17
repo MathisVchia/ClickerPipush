@@ -132,15 +132,13 @@ public class gatchaManagement : MonoBehaviour
             SetStickerCommon1Visibility(true);
 
             // Position aléatoire
-            float randomX = Random.Range(250f, 700f); // Modifiez les valeurs selon vos besoins
-            float randomY = Random.Range(100f, 750f);    // Modifiez les valeurs selon vos besoins
-            Vector3 randomPosition = new Vector3(randomX, randomY, 0);
+            Vector3 randomPosition = new Vector3(510, 380, 0);
             stickersCommon1.transform.position = randomPosition;
 
             // Rotation aléatoire
-            float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
+            //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
-            Quaternion randomRotation = Quaternion.Euler(randomRotationX, randomRotationY, 0);
+            Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
             stickersCommon1.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
@@ -151,15 +149,13 @@ public class gatchaManagement : MonoBehaviour
             SetStickerCommon2Visibility(true);
 
             // Position aléatoire
-            float randomX = Random.Range(250f, 700f); // Modifiez les valeurs selon vos besoins
-            float randomY = Random.Range(100f, 750f);    // Modifiez les valeurs selon vos besoins
-            Vector3 randomPosition = new Vector3(randomX, randomY, 0);
+            Vector3 randomPosition = new Vector3(450, 210, 0);
             stickersCommon2.transform.position = randomPosition;
 
             // Rotation aléatoire
-            float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
+            //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
-            Quaternion randomRotation = Quaternion.Euler(randomRotationX, randomRotationY, 0);
+            Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
             stickersCommon2.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
