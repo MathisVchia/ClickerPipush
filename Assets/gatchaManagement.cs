@@ -9,6 +9,8 @@ public class gatchaManagement : MonoBehaviour
     public GameObject gatchaButton;
     public GameObject stickersCommon1;
     public GameObject stickersCommon2;
+    public GameObject stickersCommon1Carnet;
+    public GameObject stickersCommon2Carnet;
     public GameObject passButton;
     public GameObject carnet;
     public GameObject closeCarnetButton;
@@ -34,6 +36,8 @@ public class gatchaManagement : MonoBehaviour
         SetGatchaButtonVisibility(false);
         SetStickerCommon1Visibility(false);
         SetStickerCommon2Visibility(false);
+        SetStickerCommon1CarnetVisibility(false);
+        SetStickerCommon2CarnetVisibility(false);
         SetValidationButtonVisibility(false);
         SetCarnetVisibility(false);
         SetButtonCloseCarnetVisibility(false);
@@ -129,34 +133,34 @@ public class gatchaManagement : MonoBehaviour
         SetButtonCloseCarnetVisibility(true);
         if (nbStickersCommon >= 1)
         {
-            SetStickerCommon1Visibility(true);
+            SetStickerCommon1CarnetVisibility(true);
 
             // Position aléatoire
-            Vector3 randomPosition = new Vector3(510, 380, 0);
-            stickersCommon1.transform.position = randomPosition;
+            Vector3 randomPosition = new Vector3(510, 480, 0);
+            stickersCommon1Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon1.transform.rotation = randomRotation;
+            stickersCommon1Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
 
         if (nbStickersCommon2 >= 1)
         {
-            SetStickerCommon2Visibility(true);
+            SetStickerCommon2CarnetVisibility(true);
 
             // Position aléatoire
-            Vector3 randomPosition = new Vector3(450, 210, 0);
-            stickersCommon2.transform.position = randomPosition;
+            Vector3 randomPosition = new Vector3(450, 310, 0);
+            stickersCommon2Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon2.transform.rotation = randomRotation;
+            stickersCommon2Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
@@ -167,8 +171,8 @@ public class gatchaManagement : MonoBehaviour
     {
         SetCarnetVisibility(false);
         SetButtonCloseCarnetVisibility(false);
-        SetStickerCommon1Visibility(false);
-        SetStickerCommon2Visibility(false);
+        SetStickerCommon1CarnetVisibility(false);
+        SetStickerCommon2CarnetVisibility(false);
     }
 
     // Méthode pour définir la visibilité du bouton
@@ -206,6 +210,38 @@ public class gatchaManagement : MonoBehaviour
         {
         }
     }
+
+
+
+    // STICKERS DU CARNET
+
+    // Méthode pour définir la visibilité du bouton
+    void SetStickerCommon1CarnetVisibility(bool isVisible)
+    {
+        if (stickersCommon1Carnet != null)
+        {
+            stickersCommon1Carnet.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
+    // Méthode pour définir la visibilité du bouton
+    void SetStickerCommon2CarnetVisibility(bool isVisible)
+    {
+        if (stickersCommon2Carnet != null)
+        {
+            stickersCommon2Carnet.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
+
+
+
 
     // Méthode pour définir la visibilité du bouton
     void SetValidationButtonVisibility(bool isVisible)
