@@ -136,7 +136,7 @@ public class gatchaManagement : MonoBehaviour
             SetStickerCommon1CarnetVisibility(true);
 
             // Position aléatoire
-            Vector3 randomPosition = new Vector3(510, 480, 0);
+            Vector3 randomPosition = new Vector3(310, 380, 0);
             stickersCommon1Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
@@ -153,7 +153,7 @@ public class gatchaManagement : MonoBehaviour
             SetStickerCommon2CarnetVisibility(true);
 
             // Position aléatoire
-            Vector3 randomPosition = new Vector3(450, 310, 0);
+            Vector3 randomPosition = new Vector3(350, 460, 0);
             stickersCommon2Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
