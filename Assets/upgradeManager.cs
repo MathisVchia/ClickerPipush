@@ -7,6 +7,7 @@ public class upgradeManager : MonoBehaviour
     public shopManagement shopManagement;
     public autoclickManagement autoclickManagement;
     public scoreManager scoreManager;
+    public int price = 10;
     public GameObject upgradeButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
     public bool upgradeButtons = false;
     public bool upgradeAutoClick = false;
@@ -49,6 +50,9 @@ public class upgradeManager : MonoBehaviour
     public void onClick()
     {
         upgradeAutoClick = true;
+        autoclickManagement._timeAutoClick = .5f;
         Debug.Log("Upgrade Activated");
+        shopManagement.bonus = (shopManagement.bonus - price);
+        shopManagement.bonusUI.text = "" + shopManagement.bonus;
     }
 }

@@ -5,9 +5,9 @@ using TMPro;
 
 public class autoclickManagement : MonoBehaviour
 {
-    private float _timeAutoClick = 1f;
+    public float _timeAutoClick = 1f;
     public scoreManager scoreManager;
-
+    public upgradeManager upgradeManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +23,9 @@ public class autoclickManagement : MonoBehaviour
     {
         while (true)
         {
-            autoclick();
-            yield return new WaitForSeconds(_timeAutoClick);
+                Debug.Log("Autoclick petit");
+                autoclick();
+                yield return new WaitForSeconds(_timeAutoClick);
         }
     }
 

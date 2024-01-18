@@ -2814,7 +2814,7 @@ RectTransform:
   m_GameObject: {fileID: 1176322709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1125, y: 1, z: 1}
+  m_LocalScale: {x: 2.5085938, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616747127}
@@ -3058,7 +3058,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1205914032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1458527732}
+        m_TargetAssemblyTypeName: upgradeManager, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1458527731}
+        m_TargetAssemblyTypeName: upgradeManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1205914032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8243,7 +8267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopManagement: {fileID: 852529865}
   autoclickManagement: {fileID: 1942404415}
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 2051233213}
+  price: 10
   upgradeButton: {fileID: 1205914030}
   upgradeButtons: 0
   upgradeAutoClick: 0
@@ -8365,7 +8390,7 @@ RectTransform:
   m_GameObject: {fileID: 1616747126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58456, y: 1.2933974, z: 0.58456}
+  m_LocalScale: {x: 0.6000508, y: 1.5600151, z: 0.6000508}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1176322710}
@@ -8373,7 +8398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: -43.8}
+  m_AnchoredPosition: {x: -4.6011, y: -39.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1616747128
@@ -9094,7 +9119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e03e95d7e9ab445a28d57b1580a52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeAutoClick: 1
   scoreManager: {fileID: 2051233213}
+  upgradeManager: {fileID: 0}
 --- !u!1 &2051233212
 GameObject:
   m_ObjectHideFlags: 0

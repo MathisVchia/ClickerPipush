@@ -50,7 +50,7 @@ public class UpgradeTicketsManager : MonoBehaviour
     public void upgradeTickets()
     {
         shopManagement.bonus = (shopManagement.bonus + upgrade);
-        shopManagement.bonusUI.text = "Ticket : " + shopManagement.bonus;
+        shopManagement.bonusUI.text = "" + shopManagement.bonus;
         scoreManager.score = (scoreManager.score - upgrade);
         scoreManager.scoreUI.text = "Score : " + scoreManager.score;
     }
