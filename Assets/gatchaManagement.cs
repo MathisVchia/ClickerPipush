@@ -11,10 +11,12 @@ public class gatchaManagement : MonoBehaviour
     public GameObject stickersCommon2;
     public GameObject stickersCommon3;
     public GameObject stickersCommon4;
+    public GameObject stickersCommon5;
     public GameObject stickersCommon1Carnet;
     public GameObject stickersCommon2Carnet;
     public GameObject stickersCommon3Carnet;
     public GameObject stickersCommon4Carnet;
+    public GameObject stickersCommon5Carnet;
     public GameObject passButton;
     public GameObject carnet;
     public GameObject closeCarnetButton;
@@ -30,11 +32,13 @@ public class gatchaManagement : MonoBehaviour
     public int nbStickersCommon2 = 0;
     public int nbStickersCommon3 = 0;
     public int nbStickersCommon4 = 0;
+    public int nbStickersCommon5 = 0;
 
     public int MaxRandomStickers1;
     public int MaxRandomStickers2;
     public int MaxRandomStickers3;
     public int MaxRandomStickers4;
+    public int MaxRandomStickers5;
 
     public GameObject RedParticle;
 
@@ -46,10 +50,12 @@ public class gatchaManagement : MonoBehaviour
         SetStickerCommon2Visibility(false);
         SetStickerCommon3Visibility(false);
         SetStickerCommon4Visibility(false);
+        SetStickerCommon5Visibility(false);
         SetStickerCommon1CarnetVisibility(false);
         SetStickerCommon2CarnetVisibility(false);
         SetStickerCommon3CarnetVisibility(false);
         SetStickerCommon4CarnetVisibility(false);
+        SetStickerCommon5CarnetVisibility(false);
         SetValidationButtonVisibility(false);
         SetCarnetVisibility(false);
         SetButtonCloseCarnetVisibility(false);
@@ -159,6 +165,25 @@ public class gatchaManagement : MonoBehaviour
 
             }
         }
+
+        // Gagner un chat commun 5
+        if (RandomLoot > MaxRandomStickers3 && RandomLoot <= MaxRandomStickers4)
+        {
+            //showStickers = true;
+
+            {
+                Debug.Log("Upgrade buttons are now available!");
+                SetStickerCommon5Visibility(true); // Rendre le stickers visible
+                var vfx = Instantiate(RedParticle, Camera.main.transform);
+                vfx.transform.localPosition = new Vector3(0, 1, 10);
+                shopManagement.bonus = (shopManagement.bonus - Price);
+                shopManagement.bonusUI.text = "" + shopManagement.bonus;
+                nbStickersCommon5++;
+                //showStickers = false;
+                SetValidationButtonVisibility(true);
+
+            }
+        }
     }
 
     public void passVisual()
@@ -169,6 +194,7 @@ public class gatchaManagement : MonoBehaviour
             SetStickerCommon2Visibility(false);
             SetStickerCommon3Visibility(false);
             SetStickerCommon4Visibility(false);
+            SetStickerCommon5Visibility(false);
             SetValidationButtonVisibility(false);
         //}
         //else
@@ -248,6 +274,23 @@ public class gatchaManagement : MonoBehaviour
 
             Debug.Log("Already have stickers");
         }
+
+        if (nbStickersCommon5 >= 1)
+        {
+            SetStickerCommon5CarnetVisibility(true);
+
+            // Position aléatoire
+            Vector3 randomPosition = new Vector3(180, 580, 0);
+            stickersCommon5Carnet.transform.position = randomPosition;
+
+            // Rotation aléatoire
+            //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
+            float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
+            Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
+            stickersCommon5Carnet.transform.rotation = randomRotation;
+
+            Debug.Log("Already have stickers");
+        }
     }
 
 
@@ -259,6 +302,7 @@ public class gatchaManagement : MonoBehaviour
         SetStickerCommon2CarnetVisibility(false);
         SetStickerCommon3CarnetVisibility(false);
         SetStickerCommon4CarnetVisibility(false);
+        SetStickerCommon5CarnetVisibility(false);
     }
 
     // Méthode pour définir la visibilité du bouton
@@ -321,6 +365,18 @@ public class gatchaManagement : MonoBehaviour
         }
     }
 
+    // Méthode pour définir la visibilité du bouton
+    void SetStickerCommon5Visibility(bool isVisible)
+    {
+        if (stickersCommon5 != null)
+        {
+            stickersCommon5.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
 
 
     // STICKERS DU CARNET
@@ -367,6 +423,18 @@ public class gatchaManagement : MonoBehaviour
         if (stickersCommon4Carnet != null)
         {
             stickersCommon4Carnet.SetActive(isVisible);
+        }
+        else
+        {
+        }
+    }
+
+    // Méthode pour définir la visibilité du bouton
+    void SetStickerCommon5CarnetVisibility(bool isVisible)
+    {
+        if (stickersCommon5Carnet != null)
+        {
+            stickersCommon5Carnet.SetActive(isVisible);
         }
         else
         {
