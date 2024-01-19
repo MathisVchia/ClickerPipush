@@ -5,15 +5,15 @@ using UnityEngine;
 public class coupure : MonoBehaviour
 {
 
-    public float timer;
+    public float Timer;
     public float TimerCoupure;
-    public float reparation;
-    public GameObject canvas1;
-    public GameObject canvas2;
-    public GameObject canvas3;
-    public GameObject canvas4;
-    public GameObject canvas5;
-    public GameObject reparationButton;
+    public float Reparation;
+    public GameObject Canvas1;
+    public GameObject Canvas2;
+    public GameObject Canvas3;
+    public GameObject Canvas4;
+    public GameObject Canvas5;
+    public GameObject ReparationButton;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class coupure : MonoBehaviour
         SetButtonReparationVisibility(false);
 
         // Définir un premier temps de spawn alétoire
-        timer = Random.Range(15, 20);
+        Timer = Random.Range(15, 20);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class coupure : MonoBehaviour
     {
         // Vérifier si un ennemi n'est pas actif et si le temps est écoulé
         TimerCoupure += Time.deltaTime;
-        if (TimerCoupure >= timer)
+        if (TimerCoupure >= Timer)
         {
             CoupureCourant();
         }
@@ -50,11 +50,11 @@ public class coupure : MonoBehaviour
         SetButtonReparationVisibility(true);
     }
 
-    public void Reparation()
+    public void Reparations()
     {
-        reparation = reparation +1;
-        Debug.Log(reparation);
-        if (reparation >= 5)
+        Reparation = Reparation +1;
+        Debug.Log(Reparation);
+        if (Reparation >= 5)
         {
             Debug.Log("Reparation en cours...");
             SetCanvas1Visibility(true);
@@ -64,17 +64,17 @@ public class coupure : MonoBehaviour
             SetCanvas5Visibility(true);
             SetButtonReparationVisibility(false);
             TimerCoupure = 0;
-            timer = Random.Range(15, 20);
-            reparation = 0;
+            Timer = Random.Range(15, 20);
+            Reparation = 0;
         }
     }
 
     // Méthode pour définir la visibilité du bouton
     void SetCanvas1Visibility(bool isVisible)
     {
-        if (canvas1 != null)
+        if (Canvas1 != null)
         {
-            canvas1.SetActive(isVisible);
+            Canvas1.SetActive(isVisible);
             Debug.Log("(^.^)/");
 
         }
@@ -86,9 +86,9 @@ public class coupure : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetCanvas2Visibility(bool isVisible)
     {
-        if (canvas2 != null)
+        if (Canvas2 != null)
         {
-            canvas2.SetActive(isVisible);
+            Canvas2.SetActive(isVisible);
         }
         else
         {
@@ -98,9 +98,9 @@ public class coupure : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetCanvas3Visibility(bool isVisible)
     {
-        if (canvas3 != null)
+        if (Canvas3 != null)
         {
-            canvas3.SetActive(isVisible);
+            Canvas3.SetActive(isVisible);
         }
         else
         {
@@ -110,9 +110,9 @@ public class coupure : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetCanvas4Visibility(bool isVisible)
     {
-        if (canvas4 != null)
+        if (Canvas4 != null)
         {
-            canvas4.SetActive(isVisible);
+            Canvas4.SetActive(isVisible);
         }
         else
         {
@@ -122,9 +122,9 @@ public class coupure : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetCanvas5Visibility(bool isVisible)
     {
-        if (canvas5 != null)
+        if (Canvas5 != null)
         {
-            canvas5.SetActive(isVisible);
+            Canvas5.SetActive(isVisible);
         }
         else
         {
@@ -134,9 +134,9 @@ public class coupure : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetButtonReparationVisibility(bool isVisible)
     {
-        if (reparationButton != null)
+        if (ReparationButton != null)
         {
-            reparationButton.SetActive(isVisible);
+            ReparationButton.SetActive(isVisible);
         }
         else
         {

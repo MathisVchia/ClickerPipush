@@ -6,10 +6,10 @@ public class UpgradeTicketsManager : MonoBehaviour
 {
     public shopManagement shopManagement;
     public scoreManager scoreManager;
-    public GameObject upgradeTicketsButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
-    public bool upgradeTicketsButtons = false;
+    public GameObject UpgradeTicketsButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
+    public bool UpgradeTicketsButtons = false;
 
-    public int upgrade = 5;
+    public int Upgrade = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +23,13 @@ public class UpgradeTicketsManager : MonoBehaviour
     {
         if (shopManagement.bonus > 25)
         {
-            upgradeTicketsButtons = true;
+            UpgradeTicketsButtons = true;
             Debug.Log("Upgrade buttons are now available!");
             SetUpgradeButtonVisibility(true); // Rendre le bouton visible
         }
         else
         {
-            upgradeTicketsButtons = false;
+            UpgradeTicketsButtons = false;
             SetUpgradeButtonVisibility(false); // Rendre le bouton invisible
         }
     }
@@ -37,9 +37,9 @@ public class UpgradeTicketsManager : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetUpgradeButtonVisibility(bool isVisible)
     {
-        if (upgradeTicketsButton != null)
+        if (UpgradeTicketsButton != null)
         {
-            upgradeTicketsButton.SetActive(isVisible);
+            UpgradeTicketsButton.SetActive(isVisible);
         }
         else
         {
@@ -49,9 +49,9 @@ public class UpgradeTicketsManager : MonoBehaviour
 
     public void upgradeTickets()
     {
-        shopManagement.bonus = (shopManagement.bonus + upgrade);
+        shopManagement.bonus = (shopManagement.bonus + Upgrade);
         shopManagement.bonusUI.text = "" + shopManagement.bonus;
-        scoreManager.score = (scoreManager.score - upgrade);
+        scoreManager.score = (scoreManager.score - Upgrade);
         scoreManager.scoreUI.text = "Score : " + scoreManager.score;
     }
 }

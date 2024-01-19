@@ -6,33 +6,33 @@ public class gatchaManagement : MonoBehaviour
 {
 
     public shopManagement shopManagement;
-    public GameObject gatchaButton;
-    public GameObject stickersCommon1;
-    public GameObject stickersCommon2;
-    public GameObject stickersCommon3;
-    public GameObject stickersCommon4;
-    public GameObject stickersCommon5;
-    public GameObject stickersCommon1Carnet;
-    public GameObject stickersCommon2Carnet;
-    public GameObject stickersCommon3Carnet;
-    public GameObject stickersCommon4Carnet;
-    public GameObject stickersCommon5Carnet;
-    public GameObject passButton;
-    public GameObject carnet;
-    public GameObject closeCarnetButton;
-    public bool gatchaButtons = false;
-    public bool showStickers = false;
+    public GameObject GatchaButton;
+    public GameObject StickersCommon1;
+    public GameObject StickersCommon2;
+    public GameObject StickersCommon3;
+    public GameObject StickersCommon4;
+    public GameObject StickersCommon5;
+    public GameObject StickersCommon1Carnet;
+    public GameObject StickersCommon2Carnet;
+    public GameObject StickersCommon3Carnet;
+    public GameObject StickersCommon4Carnet;
+    public GameObject StickersCommon5Carnet;
+    public GameObject PassButton;
+    public GameObject Carnet;
+    public GameObject CloseCarnetButton;
+    public bool GatchaButtons = false;
+    public bool ShowStickers = false;
 
     // Gestion des taux d'obtentions
     public int RandomLoot;
     public int Minimum = 0;
     public int Maximum = 100;
     public int Price = 30;
-    public int nbStickersCommon = 0;
-    public int nbStickersCommon2 = 0;
-    public int nbStickersCommon3 = 0;
-    public int nbStickersCommon4 = 0;
-    public int nbStickersCommon5 = 0;
+    public int NbStickersCommon = 0;
+    public int NbStickersCommon2 = 0;
+    public int NbStickersCommon3 = 0;
+    public int NbStickersCommon4 = 0;
+    public int NbStickersCommon5 = 0;
 
     public int MaxRandomStickers1;
     public int MaxRandomStickers2;
@@ -67,13 +67,13 @@ public class gatchaManagement : MonoBehaviour
 
         if (shopManagement.bonus > 30)
         {
-            gatchaButtons = true;
+            GatchaButtons = true;
             Debug.Log("Upgrade buttons are now available!");
             SetGatchaButtonVisibility(true); // Rendre le bouton visible
         }
         else
         {
-            gatchaButtons = false;
+            GatchaButtons = false;
             SetGatchaButtonVisibility(false); // Rendre le bouton invisible
         }
 
@@ -92,7 +92,7 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un chat commun
         if (RandomLoot <= MaxRandomStickers1)
         {
-            //showStickers = true;
+            //ShowStickers = true;
 
             {
                 //stickerCommon1 = true;
@@ -102,8 +102,8 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "" + shopManagement.bonus;
-                nbStickersCommon++;
-                //showStickers = false;
+                NbStickersCommon++;
+                //ShowStickers = false;
                 SetValidationButtonVisibility(true);
 
             }
@@ -112,7 +112,7 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un chat commun 2
         if (RandomLoot > MaxRandomStickers1 && RandomLoot <= MaxRandomStickers2)
         {
-            //showStickers = true;
+            //ShowStickers = true;
 
             {
                 Debug.Log("Upgrade buttons are now available!");
@@ -121,8 +121,8 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "" + shopManagement.bonus;
-                nbStickersCommon2++;
-                //showStickers = false;
+                NbStickersCommon2++;
+                //ShowStickers = false;
                 SetValidationButtonVisibility(true);
 
             }
@@ -131,7 +131,7 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un chat commun 3
         if (RandomLoot > MaxRandomStickers2 && RandomLoot <= MaxRandomStickers3)
         {
-            //showStickers = true;
+            //ShowStickers = true;
 
             {
                 Debug.Log("Upgrade buttons are now available!");
@@ -140,8 +140,8 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "" + shopManagement.bonus;
-                nbStickersCommon3++;
-                //showStickers = false;
+                NbStickersCommon3++;
+                //ShowStickers = false;
                 SetValidationButtonVisibility(true);
 
             }
@@ -150,7 +150,7 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un chat commun 4
         if (RandomLoot > MaxRandomStickers3 && RandomLoot <= MaxRandomStickers4)
         {
-            //showStickers = true;
+            //ShowStickers = true;
 
             {
                 Debug.Log("Upgrade buttons are now available!");
@@ -159,8 +159,8 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "" + shopManagement.bonus;
-                nbStickersCommon4++;
-                //showStickers = false;
+                NbStickersCommon4++;
+                //ShowStickers = false;
                 SetValidationButtonVisibility(true);
 
             }
@@ -169,7 +169,7 @@ public class gatchaManagement : MonoBehaviour
         // Gagner un chat commun 5
         if (RandomLoot > MaxRandomStickers3 && RandomLoot <= MaxRandomStickers4)
         {
-            //showStickers = true;
+            //ShowStickers = true;
 
             {
                 Debug.Log("Upgrade buttons are now available!");
@@ -178,8 +178,8 @@ public class gatchaManagement : MonoBehaviour
                 vfx.transform.localPosition = new Vector3(0, 1, 10);
                 shopManagement.bonus = (shopManagement.bonus - Price);
                 shopManagement.bonusUI.text = "" + shopManagement.bonus;
-                nbStickersCommon5++;
-                //showStickers = false;
+                NbStickersCommon5++;
+                //ShowStickers = false;
                 SetValidationButtonVisibility(true);
 
             }
@@ -188,7 +188,7 @@ public class gatchaManagement : MonoBehaviour
 
     public void passVisual()
     {
-        //if (showStickers == false)
+        //if (ShowStickers == false)
         //{
             SetStickerCommon1Visibility(false);
             SetStickerCommon2Visibility(false);
@@ -207,87 +207,87 @@ public class gatchaManagement : MonoBehaviour
     {
         SetCarnetVisibility(true);
         SetButtonCloseCarnetVisibility(true);
-        if (nbStickersCommon >= 1)
+        if (NbStickersCommon >= 1)
         {
             SetStickerCommon1CarnetVisibility(true);
 
             // Position aléatoire
             Vector3 randomPosition = new Vector3(380, 510, 0);
-            stickersCommon1Carnet.transform.position = randomPosition;
+            StickersCommon1Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon1Carnet.transform.rotation = randomRotation;
+            StickersCommon1Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
 
-        if (nbStickersCommon2 >= 1)
+        if (NbStickersCommon2 >= 1)
         {
             SetStickerCommon2CarnetVisibility(true);
 
             // Position aléatoire
             Vector3 randomPosition = new Vector3(160, 380, 0);
-            stickersCommon2Carnet.transform.position = randomPosition;
+            StickersCommon2Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon2Carnet.transform.rotation = randomRotation;
+            StickersCommon2Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
 
-        if (nbStickersCommon3 >= 1)
+        if (NbStickersCommon3 >= 1)
         {
             SetStickerCommon3CarnetVisibility(true);
 
             // Position aléatoire
             Vector3 randomPosition = new Vector3(220, 610, 0);
-            stickersCommon3Carnet.transform.position = randomPosition;
+            StickersCommon3Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon3Carnet.transform.rotation = randomRotation;
+            StickersCommon3Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
 
-        if (nbStickersCommon4 >= 1)
+        if (NbStickersCommon4 >= 1)
         {
             SetStickerCommon4CarnetVisibility(true);
 
             // Position aléatoire
             Vector3 randomPosition = new Vector3(250, 530, 0);
-            stickersCommon4Carnet.transform.position = randomPosition;
+            StickersCommon4Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon4Carnet.transform.rotation = randomRotation;
+            StickersCommon4Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
 
-        if (nbStickersCommon5 >= 1)
+        if (NbStickersCommon5 >= 1)
         {
             SetStickerCommon5CarnetVisibility(true);
 
             // Position aléatoire
             Vector3 randomPosition = new Vector3(180, 580, 0);
-            stickersCommon5Carnet.transform.position = randomPosition;
+            StickersCommon5Carnet.transform.position = randomPosition;
 
             // Rotation aléatoire
             //float randomRotationX = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             float randomRotationY = Random.Range(0f, 45f); // Modifiez les valeurs selon vos besoins
             Quaternion randomRotation = Quaternion.Euler(0, randomRotationY, 0);
-            stickersCommon5Carnet.transform.rotation = randomRotation;
+            StickersCommon5Carnet.transform.rotation = randomRotation;
 
             Debug.Log("Already have stickers");
         }
@@ -308,9 +308,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetGatchaButtonVisibility(bool isVisible)
     {
-        if (gatchaButton != null)
+        if (GatchaButton != null)
         {
-            gatchaButton.SetActive(isVisible);
+            GatchaButton.SetActive(isVisible);
         }
         else
         {
@@ -320,9 +320,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon1Visibility(bool isVisible)
     {
-        if (stickersCommon1 != null)
+        if (StickersCommon1 != null)
         {
-            stickersCommon1.SetActive(isVisible);
+            StickersCommon1.SetActive(isVisible);
         }
         else
         {
@@ -332,9 +332,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon2Visibility(bool isVisible)
     {
-        if (stickersCommon2 != null)
+        if (StickersCommon2 != null)
         {
-            stickersCommon2.SetActive(isVisible);
+            StickersCommon2.SetActive(isVisible);
         }
         else
         {
@@ -344,9 +344,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon3Visibility(bool isVisible)
     {
-        if (stickersCommon3 != null)
+        if (StickersCommon3 != null)
         {
-            stickersCommon3.SetActive(isVisible);
+            StickersCommon3.SetActive(isVisible);
         }
         else
         {
@@ -356,9 +356,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon4Visibility(bool isVisible)
     {
-        if (stickersCommon4 != null)
+        if (StickersCommon4 != null)
         {
-            stickersCommon4.SetActive(isVisible);
+            StickersCommon4.SetActive(isVisible);
         }
         else
         {
@@ -368,9 +368,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon5Visibility(bool isVisible)
     {
-        if (stickersCommon5 != null)
+        if (StickersCommon5 != null)
         {
-            stickersCommon5.SetActive(isVisible);
+            StickersCommon5.SetActive(isVisible);
         }
         else
         {
@@ -384,9 +384,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon1CarnetVisibility(bool isVisible)
     {
-        if (stickersCommon1Carnet != null)
+        if (StickersCommon1Carnet != null)
         {
-            stickersCommon1Carnet.SetActive(isVisible);
+            StickersCommon1Carnet.SetActive(isVisible);
         }
         else
         {
@@ -396,9 +396,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon2CarnetVisibility(bool isVisible)
     {
-        if (stickersCommon2Carnet != null)
+        if (StickersCommon2Carnet != null)
         {
-            stickersCommon2Carnet.SetActive(isVisible);
+            StickersCommon2Carnet.SetActive(isVisible);
         }
         else
         {
@@ -408,9 +408,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon3CarnetVisibility(bool isVisible)
     {
-        if (stickersCommon3Carnet != null)
+        if (StickersCommon3Carnet != null)
         {
-            stickersCommon3Carnet.SetActive(isVisible);
+            StickersCommon3Carnet.SetActive(isVisible);
         }
         else
         {
@@ -420,9 +420,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon4CarnetVisibility(bool isVisible)
     {
-        if (stickersCommon4Carnet != null)
+        if (StickersCommon4Carnet != null)
         {
-            stickersCommon4Carnet.SetActive(isVisible);
+            StickersCommon4Carnet.SetActive(isVisible);
         }
         else
         {
@@ -432,9 +432,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetStickerCommon5CarnetVisibility(bool isVisible)
     {
-        if (stickersCommon5Carnet != null)
+        if (StickersCommon5Carnet != null)
         {
-            stickersCommon5Carnet.SetActive(isVisible);
+            StickersCommon5Carnet.SetActive(isVisible);
         }
         else
         {
@@ -445,9 +445,9 @@ public class gatchaManagement : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetValidationButtonVisibility(bool isVisible)
     {
-        if (passButton != null)
+        if (PassButton != null)
         {
-           passButton.SetActive(isVisible);
+           PassButton.SetActive(isVisible);
         }
         else
         {
@@ -456,9 +456,9 @@ public class gatchaManagement : MonoBehaviour
 
     void SetCarnetVisibility(bool isVisible)
     {
-        if (carnet != null)
+        if (Carnet != null)
         {
-            carnet.SetActive(isVisible);
+            Carnet.SetActive(isVisible);
         }
         else
         {
@@ -467,9 +467,9 @@ public class gatchaManagement : MonoBehaviour
 
     void SetButtonCloseCarnetVisibility(bool isVisible)
     {
-        if(closeCarnetButton != null)
+        if(CloseCarnetButton != null)
         {
-            closeCarnetButton.SetActive(isVisible);
+            CloseCarnetButton.SetActive(isVisible);
         }
         else
         {

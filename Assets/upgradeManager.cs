@@ -7,10 +7,10 @@ public class upgradeManager : MonoBehaviour
     public shopManagement shopManagement;
     public autoclickManagement autoclickManagement;
     public scoreManager scoreManager;
-    public int price = 10;
-    public GameObject upgradeButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
-    public bool upgradeButtons = false;
-    public bool upgradeAutoClick = false;
+    public int Price = 10;
+    public GameObject UpgradeButton; // Faites glisser votre bouton UI dans cette variable dans l'inspecteur Unity
+    public bool UpgradeButtons = false;
+    public bool UpgradeAutoClick = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +24,13 @@ public class upgradeManager : MonoBehaviour
     {
         if (shopManagement.bonus > 10)
         {
-            upgradeButtons = true;
+            UpgradeButtons = true;
             Debug.Log("Upgrade buttons are now available!");
             SetUpgradeButtonVisibility(true); // Rendre le bouton visible
         }
         else
         {
-            upgradeButtons = false;
+            UpgradeButtons = false;
             SetUpgradeButtonVisibility(false); // Rendre le bouton invisible
         }
     }
@@ -38,9 +38,9 @@ public class upgradeManager : MonoBehaviour
     // Méthode pour définir la visibilité du bouton
     void SetUpgradeButtonVisibility(bool isVisible)
     {
-        if (upgradeButton != null)
+        if (UpgradeButton != null)
         {
-            upgradeButton.SetActive(isVisible);
+            UpgradeButton.SetActive(isVisible);
         }
         else
         {
@@ -49,10 +49,10 @@ public class upgradeManager : MonoBehaviour
 
     public void onClick()
     {
-        upgradeAutoClick = true;
+        UpgradeAutoClick = true;
         autoclickManagement._timeAutoClick = .5f;
         Debug.Log("Upgrade Activated");
-        shopManagement.bonus = (shopManagement.bonus - price);
+        shopManagement.bonus = (shopManagement.bonus - Price);
         shopManagement.bonusUI.text = "" + shopManagement.bonus;
     }
 }
