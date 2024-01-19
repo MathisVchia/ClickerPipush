@@ -6,8 +6,8 @@ using TMPro;
 public class shopManagement : MonoBehaviour
 {
     public scoreManager scoreManager;
-    public TextMeshProUGUI bonusUI;
-    public int bonus;
+    public TextMeshProUGUI BonusUI;
+    public int Bonus;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +30,8 @@ public class shopManagement : MonoBehaviour
         {
             scoreManager.score --;
             scoreManager.scoreUI.text = "Score : " + scoreManager.score;
-            bonus++;
-            bonusUI.text = "" + bonus;
+            Bonus++;
+            BonusUI.text = "" + Bonus;
         }
         else
         {

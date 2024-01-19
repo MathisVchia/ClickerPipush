@@ -5,10 +5,10 @@ using TMPro;
 
 public class scoreManager : MonoBehaviour
 {
-    public int score;
+    public int Score;
     public upgradeManager upgradeManager;
 
-    public TextMeshProUGUI scoreUI;
+    public TextMeshProUGUI ScoreUI;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,8 @@ public class scoreManager : MonoBehaviour
 
     public void addScore()
     {
-        score++;
-        scoreUI.text = "Score : " + score;
+        Score++;
+        ScoreUI.text = "Score : " + Score;
     }
 
 }
